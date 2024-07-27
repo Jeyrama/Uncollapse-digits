@@ -21,3 +21,24 @@ function uncollapse(digits){
 }
 
 // or
+
+function uncollapse(digits) {
+  const writtenNumbers = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+  ];
+  for (let i = 0; i < writtenNumbers.length; i++) {
+    let re = new RegExp(writtenNumbers[i], "g");
+    digits = digits.replace(re, `${writtenNumbers[i]}` + " ");
+  }
+  return digits.slice(0, -1);
+}
